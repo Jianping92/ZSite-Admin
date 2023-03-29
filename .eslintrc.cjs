@@ -8,7 +8,8 @@ module.exports = {
         "eslint:recommended",
         "plugin:vue/vue3-essential",
         "plugin:@typescript-eslint/recommended",
-        "plugin:prettier/recommended"
+        "plugin:prettier/recommended",
+        "./.eslintrc-auto-import.json"
     ],
     "parser": "vue-eslint-parser",
     "parserOptions": {
@@ -20,6 +21,12 @@ module.exports = {
         "vue",
         "@typescript-eslint"
     ],
+    "globals": {
+        defineProps: "readonly",
+        defineEmits: "readonly",
+        defineExpose: "readonly",
+        withDefaults: "readonly"
+    },
     "rules": {
     }
 }
