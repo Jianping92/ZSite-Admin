@@ -4,7 +4,7 @@ import vueSetupExtend from "vite-plugin-vue-setup-extend";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
-import Visualizer from "rollup-plugin-visualizer";
+// import visualizer from "rollup-plugin-visualizer";
 import ViteCompression from "vite-plugin-compression";
 import { chunkSplitPlugin } from "vite-plugin-chunk-split";
 
@@ -69,8 +69,8 @@ export default defineConfig({
         // "vue", "vue-router", "pinia" 会被打包到 "main-vendor" 内
         "main-vendor": ["vue", "vue-router", "pinia"]
       }
-    }),
+    })
     // 打包分析
-    Visualizer({ open: true })
+    // visualizer({ open: true })
   ]
 });
