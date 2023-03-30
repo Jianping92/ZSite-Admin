@@ -1,32 +1,37 @@
-<script setup lang="ts">
-import HelloWorld from "./components/HelloWorld.vue";
-</script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div id="container">
+    <el-config-provider :locale="locale">
+      <router-view />
+    </el-config-provider>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
+<script setup lang="ts">
+import zhCn from "element-plus/lib/locale/lang/zh-cn";
+import appStore from "@/store";
+
+const locale = zhCn;
+
+const params = {
+  name: "张三",
+  avatar: "https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png",
+  email: "zhang_san@qq.com",
+  sex: "男",
+  permission: "admin",
+  others: {
+    summary: "前端开发工程师"
+  }
+};
+onMounted(() => {
+  appStore.userInfo.setUserBasic(params);
+});
+</script>
+
 <style lang="scss" scoped>
-.logo {
-  padding: 1.5em;
-  height: 6em;
-  transition: filter 300ms;
-  will-change: filter;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+#container {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
 }
 </style>
