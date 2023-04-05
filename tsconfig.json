@@ -12,6 +12,7 @@
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
     "noEmit": true,
+    "allowJs": true,
     "baseUrl": "./",
     "paths": {
       "@/*": ["./src/*"]
@@ -29,6 +30,5 @@
     "vite.config.ts"
   ],
   // ts 排除的文件
-  "exclude": ["node_modules", "dist", "**/*.js"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "exclude": ["node_modules", "dist", "**/*.js"]
 }

@@ -35,6 +35,8 @@ specifiers:
   vite: ^4.2.0
   vite-plugin-chunk-split: ^0.4.7
   vite-plugin-compression: ^0.5.1
+  vite-plugin-progress: ^0.0.7
+  vite-plugin-restart: ^0.3.1
   vite-plugin-vue-setup-extend: ^0.4.0
   vue: ^3.2.47
   vue-router: ^4.1.6
@@ -79,6 +81,8 @@ devDependencies:
   vite: 4.2.1_sass@1.60.0
   vite-plugin-chunk-split: 0.4.7_vite@4.2.1
   vite-plugin-compression: 0.5.1_vite@4.2.1
+  vite-plugin-progress: 0.0.7_vite@4.2.1
+  vite-plugin-restart: 0.3.1_vite@4.2.1
   vite-plugin-vue-setup-extend: 0.4.0_vite@4.2.1
   vue-tsc: 1.2.0_typescript@4.9.5
 
@@ -820,6 +824,10 @@ packages:
 
   /@types/minimist/1.2.2:
     resolution: {integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==}
+    dev: true
+
+  /@types/node/10.17.60:
+    resolution: {integrity: sha512-F0KIgDJfy2nA3zMLmWGKxcH2ZVEtCZXHHdOQs2gSaQ27+lNeEfGxzkIw90aXswATX7AZ33tahPbzy6KAfUreVw==}
     dev: true
 
   /@types/normalize-package-data/2.4.1:
@@ -2738,6 +2746,11 @@ packages:
     hasBin: true
     dev: true
 
+  /progress/2.0.3:
+    resolution: {integrity: sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==}
+    engines: {node: '>=0.4.0'}
+    dev: true
+
   /proxy-from-env/1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
     dev: false
@@ -2754,6 +2767,12 @@ packages:
   /quick-lru/4.0.1:
     resolution: {integrity: sha512-ARhCpm70fzdcvNQfPoy49IaanKkTlRWF2JMzqhcJbhSFRZv7nPTvZJdcY7301IPmvW+/p0RgIWnQDLJxifsQ7g==}
     engines: {node: '>=8'}
+    dev: true
+
+  /rd/2.0.1:
+    resolution: {integrity: sha512-/XdKU4UazUZTXFmI0dpABt8jSXPWcEyaGdk340KdHnsEOdkTctlX23aAK7ChQDn39YGNlAJr1M5uvaKt4QnpNw==}
+    dependencies:
+      '@types/node': 10.17.60
     dev: true
 
   /read-pkg-up/7.0.1:
@@ -3413,6 +3432,27 @@ packages:
       vite: 4.2.1_sass@1.60.0
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /vite-plugin-progress/0.0.7_vite@4.2.1:
+    resolution: {integrity: sha512-zyvKdcc/X+6hnw3J1HVV1TKrlFKC4Rh8GnDnWG/2qhRXjqytTcM++xZ+SAPnoDsSyWl8O93ymK0wZRgHAoglEQ==}
+    engines: {node: '>=14', pnpm: '>=7.0.0'}
+    peerDependencies:
+      vite: '>2.0.0-0'
+    dependencies:
+      picocolors: 1.0.0
+      progress: 2.0.3
+      rd: 2.0.1
+      vite: 4.2.1_sass@1.60.0
+    dev: true
+
+  /vite-plugin-restart/0.3.1_vite@4.2.1:
+    resolution: {integrity: sha512-LVe74MLUwaOzXVUgRGiphYbAYNgdGF6mP5vxj5BKcKkdmzvuuw79qcNgn9kHKKaIlCCjmOUiY3qlJ8jBSBUCoA==}
+    peerDependencies:
+      vite: ^2.9.0 || ^3.0.0 || ^4.0.0
+    dependencies:
+      micromatch: 4.0.5
+      vite: 4.2.1_sass@1.60.0
     dev: true
 
   /vite-plugin-vue-setup-extend/0.4.0_vite@4.2.1:
