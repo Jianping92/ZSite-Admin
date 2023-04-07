@@ -1,6 +1,3 @@
-import { defineStore } from "pinia";
-import { reactive } from "vue";
-
 interface UserBasic {
   name: string;
   avatar: string;
@@ -21,6 +18,13 @@ export const userInfo = defineStore("userInfo", () => {
     others: {}
   });
 
+  const userLoginStatus = ref<boolean>(false);
+
+  const setUserLoginStatus = (status: boolean) => {
+    console.log(status);
+    userLoginStatus.value = status;
+  };
+
   const setUserBasic = (data: UserBasic): void => {
     if (typeof data === "object") {
       (Object.keys(data) as unknown as (keyof UserBasic)[]).forEach(
@@ -33,5 +37,10 @@ export const userInfo = defineStore("userInfo", () => {
     }
   };
 
-  return { userBasic, setUserBasic };
+  return {
+    userBasic,
+    userLoginStatus,
+    setUserBasic,
+    setUserLoginStatus
+  };
 });

@@ -11,6 +11,11 @@ import "./assets/styles/reset.scss";
 import "element-plus/dist/index.css";
 import "./assets/styles/common.scss";
 
+/**
+ * JavaScript
+ * */
+import "./router-permissions";
+
 const app = createApp(App);
 
 app.use(createPinia());
