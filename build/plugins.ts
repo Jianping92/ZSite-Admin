@@ -36,7 +36,7 @@ export const createVitePlugins = (isBuild: boolean) => {
   if (isBuild) {
     // 压缩
     vitePlugins.push(compressionPlugin());
-    // 打包分析工具 2023-04-05禁用，疑似与新版vite重的rollup不兼容
+    // 打包分析工具 2023-04-05禁用，疑似与新版vite重的rollup不兼容 or 不兼容pnpm
     // vitePlugins.push(visualizerPlugin());
   }
 
