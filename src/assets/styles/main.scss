@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+@import url("./_themes.scss");
+
+$main-background: var(--zsite-main-background);
+$main-text: var(--zsite-main-text);
+$header-background: var(--zsite-header-background);
+$header-text: var(--zsite-header-text);
+$menu-background: var(--zsite-menu-background);
+$menu-background-active: var(--zsite-menu-background-active);
+$menu-text: var(--zsite-menu-text);
+$menu-text-active: var(--zsite-menu-text-active);

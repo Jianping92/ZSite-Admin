@@ -12,7 +12,6 @@ export function filterByPermissions(
   routes: RouteRecordRawExtendCollection,
   permissions: object = {}
 ): RouteRecordRawExtendCollection {
-  console.log(routes);
   return routes
     .filter(
       (route) =>

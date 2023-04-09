@@ -1,5 +1,5 @@
 <template>
-  <div id="container">
+  <div id="container" :class="[theme]">
     <el-config-provider :locale="locale">
       <router-view />
     </el-config-provider>
@@ -9,6 +9,7 @@
 <script setup lang="ts">
 import zhCn from "element-plus/lib/locale/lang/zh-cn";
 import appStore from "@/store";
+import { themeDataComputed } from "@/utils/theme-change";
 
 const locale = zhCn;
 
@@ -25,6 +26,9 @@ const params = {
 onMounted(() => {
   appStore.userInfo.setUserBasic(params);
 });
+const theme = computed(() => {
+  return themeDataComputed().theme.themeVal.value;
+});
 </script>
 
 <style lang="scss" scoped>
@@ -33,5 +37,13 @@ onMounted(() => {
   overflow: hidden;
   width: 100vw;
   height: 100vh;
+
+  &.dark {
+    @include darkTheme();
+  }
+
+  &.light {
+    @include lightTheme();
+  }
 }
 </style>

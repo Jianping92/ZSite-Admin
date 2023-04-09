@@ -21,7 +21,6 @@ export const userInfo = defineStore("userInfo", () => {
   const userLoginStatus = ref<boolean>(false);
 
   const setUserLoginStatus = (status: boolean) => {
-    console.log(status);
     userLoginStatus.value = status;
   };
 

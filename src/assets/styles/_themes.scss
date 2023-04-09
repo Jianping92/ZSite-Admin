@@ -1,0 +1,58 @@
+// 浅色模式
+@mixin lightTheme() {
+  @include css-var(
+    $theme-main-background: rgba(60, 211, 118, 0.5),
+    $theme-main-text: #333333,
+    $theme-header-background: #3CD376,
+    $theme-header-text: #333333,
+    $theme-menu-background: #29D98D,
+    $theme-menu-text: #ffffff,
+    $theme-menu-background-active: #3CD174,
+    $theme-menu-text-active: #ffffff,
+  )
+}
+// 深色模式
+@mixin darkTheme() {
+  @include css-var(
+    $theme-main-background: #141414,
+    $theme-main-text: #ffffff,
+    $theme-header-background: #1f1f1f,
+    $theme-header-text: #ffffff,
+    $theme-menu-background: #1f1f1f,
+    $theme-menu-text: #e3e3e3,
+    $theme-menu-background-active: #3b7cd6,
+    $theme-menu-text-active: #ffffff,
+  )
+}
+
+@mixin css-var(
+  $theme-main-background,
+  $theme-main-text,
+  $theme-header-background,
+  $theme-header-text,
+  $theme-menu-background,
+  $theme-menu-text,
+  $theme-menu-background-active,
+  $theme-menu-text-active,
+) {
+  #{--zsite-main-background}: $theme-main-background;
+  #{--zsite-main-text}: $theme-main-text;
+  #{--zsite-header-background}: $theme-header-background;
+  #{--zsite-header-text}: $theme-header-text;
+  #{--zsite-menu-background}: $theme-menu-background;
+  #{--zsite-menu-text}: $theme-menu-text;
+  #{--zsite-menu-background-active}: $theme-menu-background-active;
+  #{--zsite-menu-text-active}: $theme-menu-text-active;
+}
+
+
+/*
+--zsite-main-background: 主背景色
+--zsite-main-text：主文字色
+--zsite-header-background: header背景色
+--zsite-header-text: header字体色
+--zsite-menu-background: menu背景色
+--zsite-menu-text: menu字体色
+--zsite-menu-background-active: menu激活背景色
+--zsite-menu-text-active: menu激活字体色
+*/

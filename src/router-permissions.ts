@@ -28,7 +28,6 @@ router.beforeEach(async (to, from, next) => {
     await setBasicRoute(defaultRoutes);
     await setAsyncRoute(asyncRoutes, defaultRoutes, {});
     const filterRoutes = filterRoute.value;
-    console.log(filterRoutes);
     addAsyncRoute(filterRoutes, "/");
     next({ ...to, replace: true });
   } else {

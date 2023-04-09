@@ -20,7 +20,6 @@ export const routeInfo = defineStore("routeInfo", () => {
       permissions
     );
     filters = fixRouteRedirect(filters);
-    console.log(filters);
     filterRoute.value = filters;
   };
 

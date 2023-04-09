@@ -15,6 +15,14 @@ export default defineConfig(({ command }: ConfigEnv): UserConfig => {
         "@": path.resolve(__dirname, "./src")
       }
     },
+    css: {
+      // 如果使用scss的@use，则需要提前进行预编译，否则会一直报错
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@use "@/assets/styles/_themes.scss" as *;`
+        }
+      }
+    },
     plugins: createVitePlugins(isBuild)
   };
 });
