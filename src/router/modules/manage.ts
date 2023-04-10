@@ -4,7 +4,8 @@ export const manageRouter: RouteRecordRawExtend = {
   path: "/manage",
   name: "managePage",
   meta: {
-    rules: []
+    rules: [],
+    title: "管理中心"
   },
   component: () => import("@/views/ManagementPage/ManagementPage.vue"),
   children: [
@@ -12,7 +13,8 @@ export const manageRouter: RouteRecordRawExtend = {
       path: "/manage/home",
       name: "manageHome",
       meta: {
-        rules: []
+        rules: [],
+        title: "数据面板"
       },
       component: () => import("@/views/ManagementPage/pages/ManageHome.vue")
     },
@@ -20,7 +22,8 @@ export const manageRouter: RouteRecordRawExtend = {
       path: "/manage/list",
       name: "manageList",
       meta: {
-        rules: []
+        rules: [],
+        title: "管理列表"
       },
       component: () => import("@/views/ManagementPage/pages/ManageHome.vue")
     }

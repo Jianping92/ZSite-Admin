@@ -13,8 +13,10 @@ export const defaultRoutes: RouteRecordRawExtendCollection = [
   {
     path: "/login",
     meta: {
-      rules: []
+      rules: [],
+      title: "登录"
     },
+    hidden: true,
     component: () => import("@/views/LoginPage/LoginPage.vue")
   }
 ];
@@ -24,8 +26,10 @@ export const asyncRoutes: RouteRecordRawExtendCollection = [
     path: "/",
     name: "Layout",
     meta: {
-      rules: []
+      rules: [],
+      title: "基础布局"
     },
+    hidden: false,
     component: () => import("@/layout/DefaultLayout.vue"),
     children: [manageRouter, laboratoryRouter]
   },
