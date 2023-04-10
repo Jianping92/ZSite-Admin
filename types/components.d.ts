@@ -18,6 +18,7 @@ declare module '@vue/runtime-core' {
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElMain: typeof import('element-plus/es')['ElMain']
     ElRow: typeof import('element-plus/es')['ElRow']
+    ElSwitch: typeof import('element-plus/es')['ElSwitch']
     HelloWorld: typeof import('./../src/components/HelloWorld.vue')['default']
     IEpArrowDown: typeof import('~icons/ep/arrow-down')['default']
     IEpCpu: typeof import('~icons/ep/cpu')['default']

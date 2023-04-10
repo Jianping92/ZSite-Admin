@@ -1,5 +1,13 @@
 <template>
   <div class="header-user">
+    <div class="user-control-theme">
+      <el-switch
+        v-model="isDarkTheme"
+        active-text="深色模式"
+        inactive-text="浅色模式"
+        @change="theme.toggleTheme()"
+      />
+    </div>
     <div class="user-dropdown">
       <el-dropdown trigger="click" @command="handleCommand">
         <span class="el-dropdown-link">
@@ -23,12 +31,19 @@
 
 <script setup lang="ts">
 import appStore from "@/store";
+import { themeDataComputed } from "@/utils/theme-change";
+import { onMounted } from "vue";
 
 const { userBasic } = storeToRefs(appStore.userInfo);
-
 const handleCommand = (command: string | number | object) => {
   console.log(command);
 };
+
+const isDarkTheme = ref<boolean>(false);
+const theme = themeDataComputed().theme;
+onMounted(() => {
+  isDarkTheme.value = themeDataComputed().isDarkTheme.value;
+});
 </script>
 
 <style lang="scss" scoped>
@@ -44,6 +59,19 @@ const handleCommand = (command: string | number | object) => {
   height: 100%;
   flex: none;
   user-select: none;
+
+  .user-control-theme {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    height: 100%;
+
+    :deep(.el-switch__label *) {
+      font-size: 12px;
+    }
+  }
 
   .user-dropdown {
     position: relative;

@@ -40,6 +40,7 @@ module.exports = {
         ignorePseudoClasses: ['deep']
       }
     ],
+    "selector-class-pattern": null,
     "at-rule-no-unknown": [ true, {
       ignoreAtRules: ["use", "include", "mixin", "function"]
     }],

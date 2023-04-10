@@ -108,7 +108,7 @@ export interface ThemeComputed {
 // 动态获取主题色彩方案
 export const themeDataComputed = (): ThemeComputed => {
   const theme: ThemeChange = useTheme();
-  // 判断是否是白天模式
+  // 判断是否是深色模式
   const isDarkTheme: ComputedRef = computed(() => {
     const themeVal: string = theme.themeVal.value;
     return themeVal === Theme.Dark;
