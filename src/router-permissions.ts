@@ -35,6 +35,7 @@ router.beforeEach(async (to, from, next) => {
   }
 });
 
-router.afterEach(() => {
+router.afterEach((to) => {
+  document.title = to?.meta?.title ?? "ZCatSiteAdmin";
   NProgress.done();
 });
