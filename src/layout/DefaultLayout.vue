@@ -1,6 +1,6 @@
 <template>
   <el-container class="default-layout">
-    <el-header>
+    <el-header height="45px">
       <header-layout />
     </el-header>
     <el-main>
@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import HeaderLayout from "@/layout/components/HeaderLayout.vue";
+import HeaderLayout from "@/layout/components/DefaultHeader.vue";
 </script>
 
 <style lang="scss" scoped>

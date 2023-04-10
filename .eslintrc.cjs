@@ -28,5 +28,7 @@ module.exports = {
         withDefaults: "readonly"
     },
     "rules": {
+        // 结局global.d.ts中的声明被引用时eslint的报错
+        'no-undef': 'off',
     }
 }
