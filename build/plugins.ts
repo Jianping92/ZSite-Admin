@@ -12,6 +12,7 @@ import { chunkPlugin } from "./plugins/chunk";
 // import { visualizerPlugin } from "./plugins/visualizer";
 import { buildProgress } from "./plugins/progress";
 import { viteRestart } from "./plugins/restart";
+import { autoIcon } from "./plugins/icon";
 
 export const createVitePlugins = (isBuild: boolean) => {
   const vitePlugins: (PluginOption | PluginOption[])[] = [
@@ -26,6 +27,8 @@ export const createVitePlugins = (isBuild: boolean) => {
   vitePlugins.push(autoComponents());
   // 自动将配置的"库"内的 composition-api 自动导入 Vue 实例内
   vitePlugins.push(autoImport());
+  // 自动引入 icon
+  vitePlugins.push(autoIcon());
   // 分包工具
   vitePlugins.push(chunkPlugin());
   // 打包进度条工具

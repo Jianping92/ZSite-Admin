@@ -3,6 +3,7 @@
  * */
 import AutoImport from "unplugin-auto-import/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
+import IconsResolver from "unplugin-icons/resolver";
 
 export const autoImport = () => {
   // AutoImport 的作用是自动将配置的"库"内的 composition-api 自动导入 Vue 实例内
@@ -12,7 +13,7 @@ export const autoImport = () => {
     // imports 内设置的是需要自动导入 composition-api 的"库"
     imports: ["vue", "vue-router", "pinia"],
     // 解析器，此处使用库提供的方案将 Element-plus 组件库注入
-    resolvers: [ElementPlusResolver()],
+    resolvers: [ElementPlusResolver(), IconsResolver({ prefix: "Icon" })],
     // 配置 vue 模版内自动导入
     vueTemplate: true,
     // 自定义`auto-imports.d.ts`全局声明路径

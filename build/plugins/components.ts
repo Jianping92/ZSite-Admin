@@ -4,6 +4,7 @@
  * */
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
+import IconsResolver from "unplugin-icons/resolver";
 
 export const autoComponents = () => {
   // Components 的作用是自动引入所配置的组件，省去大量 import 语句
@@ -21,6 +22,11 @@ export const autoComponents = () => {
     include: [/\.vue$/, /\.vue\?vue/],
     exclude: [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/, /[\\/]\.nuxt[\\/]/],
     // 解析器，这里自动引入 Element-Plus 组件库组件
-    resolvers: [ElementPlusResolver()]
+    resolvers: [
+      ElementPlusResolver(),
+      IconsResolver({
+        enabledCollections: ["ep"]
+      })
+    ]
   });
 };
