@@ -4,6 +4,7 @@ import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import appStore from "@/store";
 import { addAsyncRoute } from "@/utils/router-helper";
+import { RouteLocationNormalizedExtend } from "../types/router";
 
 NProgress.configure({
   // easing: "ease", // 动画方式，和css动画属性一样（默认：ease）
@@ -35,7 +36,7 @@ router.beforeEach(async (to, from, next) => {
   }
 });
 
-router.afterEach((to) => {
+router.afterEach((to: RouteLocationNormalizedExtend) => {
   document.title = to?.meta?.title ?? "ZCatSiteAdmin";
   NProgress.done();
 });

@@ -1,4 +1,4 @@
-import { RouteRecordRaw } from "vue-router";
+import { RouteRecordRaw, RouteLocationNormalized } from "vue-router";
 
 export interface RouteItemInfo {
   hidden?: boolean;
@@ -18,6 +18,11 @@ export interface RouteItemInfo {
  */
 export type RouteRecordRawExtend = RouteRecordRaw & RouteItemInfo;
 
+/**
+ * RouteLocationNormalized拓展
+ * */
+export type RouteLocationNormalizedExtend = RouteLocationNormalized &
+  RouteItemInfo;
 /**
  * RouteRecordRawExtend集合
  */

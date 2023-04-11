@@ -14,10 +14,10 @@
 
 <script setup lang="ts">
 import appStore from "@/store";
-import { ComputedRef } from "vue";
+
 // 一级导航列表
-const getAsyncRoute: ComputedRef = appStore.routeInfo.getAsyncRoute;
-const navList: ComputedRef = computed(() => {
+const getAsyncRoute = appStore.routeInfo.getAsyncRoute;
+const navList = computed(() => {
   const list = getAsyncRoute?.filter((item) => item.name === "Layout")?.[0];
   if (list?.children) {
     // 如果存在路由则继续处理

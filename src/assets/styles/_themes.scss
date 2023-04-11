@@ -1,14 +1,14 @@
 // 浅色模式
 @mixin lightTheme() {
   @include css-var(
-    $theme-main-background: rgba(60, 211, 118, 0.5),
+    $theme-main-background: #c6e2ff,
     $theme-main-text: #333333,
-    $theme-header-background: #3CD376,
+    $theme-header-background: #337ecc,
     $theme-header-text: #333333,
-    $theme-menu-background: #29D98D,
+    $theme-menu-background: #79bbff,
     $theme-menu-text: #ffffff,
-    $theme-menu-background-active: #3CD174,
-    $theme-menu-text-active: #ffffff,
+    $theme-menu-background-active: #c6e2ff,
+    $theme-menu-text-active: #3b7cd6,
   )
 }
 // 深色模式

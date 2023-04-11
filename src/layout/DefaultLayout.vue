@@ -21,10 +21,12 @@ import HeaderLayout from "@/layout/components/DefaultHeader.vue";
   height: 100%;
 
   :deep(.el-header) {
+    position: relative;
     padding: 0;
   }
 
   :deep(.el-main) {
+    position: relative;
     padding: 0;
   }
 }
