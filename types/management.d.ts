@@ -1,9 +1,9 @@
 interface PanelInfo {
-  name?: string;
-  num?: number;
+  name: string;
+  num: number;
 }
 interface DataPanelItem {
-  id?: string;
-  today?: PanelInfo;
-  total?: PanelInfo;
+  id: string;
+  today: PanelInfo;
+  total: PanelInfo;
 }

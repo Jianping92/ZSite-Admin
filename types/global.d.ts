@@ -9,15 +9,15 @@ declare global {
   //   redirect?: string;
   //   children?: object;
   // }
-  declare interface PageRouterInfo {
-    meta?: {
-      title?: string;
-      hidden?: boolean;
-      permission?: string[];
-      rules?: string[];
-      isCreate?: boolean;
-    };
-    name?: string;
-    path?: string;
-  }
+  // declare interface PageRouterInfo {
+  //   meta?: {
+  //     title?: string;
+  //     hidden?: boolean;
+  //     permission?: string[];
+  //     rules?: string[];
+  //     isCreate?: boolean;
+  //   };
+  //   name?: string;
+  //   path?: string;
+  // }
 }

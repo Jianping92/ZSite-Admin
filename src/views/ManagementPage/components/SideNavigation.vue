@@ -10,7 +10,7 @@
           @click="changeRouter(item.path)"
         >
           <div class="nav-item-content">
-            <p>{{ item.meta.title || "未设置页面名称" }}</p>
+            <p>{{ item.meta!.title || "未设置页面名称" }}</p>
           </div>
         </div>
       </el-scrollbar>

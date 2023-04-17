@@ -2,8 +2,8 @@
   <div class="data-panel">
     <div class="data-panel-item" v-for="item in dataPanelInfo" :key="item.id">
       <div class="item-content">
-        <div class="item-content-title">{{ item.today.name }}</div>
-        <div class="item-content-num">{{ item.today.num }}</div>
+        <div class="item-content-title">{{ item.today!.name }}</div>
+        <div class="item-content-num">{{ item.today!.num }}</div>
       </div>
       <div class="item-content">
         <div class="item-content-title">{{ item.total.name }}</div>

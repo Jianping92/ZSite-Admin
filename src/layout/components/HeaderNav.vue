@@ -2,18 +2,19 @@
   <div class="header-nav">
     <div
       class="header-nav-item"
-      :class="{ active: activePath.includes(item.path) }"
+      :class="{ active: activePath.includes(item.path as string) }"
       v-for="item in navList"
       :key="item.name"
-      @click="goToPath(item)"
+      @click="goToPath(item as PageRouterInfo)"
     >
-      {{ item.meta.title }}
+      {{ item.meta!.title || "未设置页面名称" }}
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import appStore from "@/store";
+import { PageRouterInfo } from "../../../types/router";
 
 // 一级导航列表
 const getAsyncRoute = appStore.routeInfo.getAsyncRoute;
@@ -40,7 +41,7 @@ const activePath = computed(() => {
 });
 // 导航跳转
 const goToPath = (item: PageRouterInfo): void => {
-  router.push(item.path);
+  router.push(item.path as string);
 };
 </script>
 

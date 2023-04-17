@@ -13,6 +13,18 @@ export interface RouteItemInfo {
   redirect?: string | undefined;
 }
 
+export interface PageRouterInfo {
+  meta?: {
+    title?: string;
+    hidden?: boolean;
+    permission?: string[];
+    rules?: string[];
+    isCreate?: boolean;
+  };
+  name?: string;
+  path?: string;
+}
+
 /**
  * RouteRecordRaw扩展(&:交叉类型,将多个类型合并为一个类型)
  */
