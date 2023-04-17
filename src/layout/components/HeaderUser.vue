@@ -31,7 +31,7 @@
 
 <script setup lang="ts">
 import appStore from "@/store";
-import { themeDataComputed } from "@/utils/theme-change";
+import { themeDataComputed } from "@/utils/theme-helper";
 
 const { userBasic } = storeToRefs(appStore.userInfo);
 const handleCommand = (command: string | number | object) => {

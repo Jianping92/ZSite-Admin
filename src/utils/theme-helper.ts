@@ -35,7 +35,7 @@ export const createTheme = (theme: string) => {
   const themeStore = changeTheme(theme);
   return {
     ...themeStore,
-    install(app: App) {
+    install(app: App): void {
       app.provide(ThemeSymbol, themeStore);
     }
   };

@@ -3,7 +3,7 @@ import { createPinia } from "pinia";
 import App from "./App.vue";
 import router from "@/router";
 import { registerStore } from "./store";
-import { createTheme, getSystemLocalTheme } from "@/utils/theme-change";
+import { createTheme, getSystemLocalTheme } from "@/utils/theme-helper";
 
 /**
  * styles

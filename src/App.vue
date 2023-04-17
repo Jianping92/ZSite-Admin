@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import zhCn from "element-plus/lib/locale/lang/zh-cn";
 import appStore from "@/store";
-import { themeDataComputed } from "@/utils/theme-change";
+import { themeDataComputed } from "@/utils/theme-helper";
 
 const locale = zhCn;
 
