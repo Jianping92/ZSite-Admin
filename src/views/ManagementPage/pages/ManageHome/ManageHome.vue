@@ -1,9 +1,10 @@
 <template>
   <div class="manage-home">
     <el-scrollbar>
-      <!--   这里使用了类型断言     -->
+      <!--   使用了类型断言     -->
       <data-panel :dataPanelInfo="dataPanelInfo as DataPanelItem[]" />
       <publish-hot :publishHotInfo="publishHotInfo as PublishHotData" />
+      <display-pie-charts :pieChartsInfo="pieChartsInfo as PieDataItem[]" />
     </el-scrollbar>
   </div>
 </template>
@@ -12,12 +13,14 @@
 import DataPanel from "@/views/ManagementPage/pages/ManageHome/components/DataPanel.vue";
 import PublishHot from "@/views/ManagementPage/pages/ManageHome/components/PublishHot.vue";
 import dayjs from "dayjs";
+import DisplayPieCharts from "@/views/ManagementPage/pages/ManageHome/components/DisplayPieCharts.vue";
 
 const dataPanelInfo = ref<DataPanelItem[]>([]);
 const publishHotInfo = ref<PublishHotData>({
   year: 1987,
   publishList: []
 });
+const pieChartsInfo = ref<PieDataItem[]>([{ title: "", data: [] }]);
 
 onMounted(() => {
   dataPanelInfo.value = [
@@ -50,6 +53,42 @@ onMounted(() => {
     { date: "2023-03-11", num: 60 },
     { date: "2023-04-01", num: 1 },
     { date: "2023-04-15", num: 8 }
+  ];
+  pieChartsInfo.value = [
+    {
+      title: "国家/地区",
+      data: [
+        { value: 12345, name: "china" },
+        { value: 345, name: "hongkong" }
+      ]
+    },
+    {
+      title: "城市",
+      data: [
+        { value: 12345, name: "beijing" },
+        { value: 345, name: "shanghai" },
+        { value: 345, name: "hongkong" },
+        { value: 12, name: "chengdu" }
+      ]
+    },
+    {
+      title: "浏览器",
+      data: [
+        { value: 12345, name: "chrome" },
+        { value: 345, name: "edge" },
+        { value: 345, name: "firefox" }
+      ]
+    },
+    {
+      title: "操作系统",
+      data: [
+        { value: 12345, name: "windows" },
+        { value: 345, name: "mac" },
+        { value: 345, name: "iphone" },
+        { value: 345, name: "android" },
+        { value: 345, name: "ipad" }
+      ]
+    }
   ];
 });
 </script>

@@ -20,3 +20,15 @@ interface PublishHotData {
   year: number;
   publishList: PublishItem[];
 }
+
+// 数据饼图子项
+interface PieDataItemDetail {
+  value: number;
+  name: string;
+  id?: string;
+}
+// 数据饼图声明
+interface PieDataItem {
+  title: string;
+  data: PieDataItemDetail[];
+}

@@ -45,7 +45,6 @@ const props = withDefaults(defineProps<PublishHotProps>(), {
   }
 });
 const { publishHotInfo } = toRefs(props);
-console.log(publishHotInfo.value);
 
 const main: Ref<HTMLElement | null> = ref(null);
 let charts: echarts.EChartsType;
@@ -54,7 +53,9 @@ let option: EChartsOption;
 watch(
   publishHotInfo,
   () => {
-    initEcharts();
+    nextTick(() => {
+      initEcharts();
+    });
   },
   { deep: true }
 );
