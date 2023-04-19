@@ -39,7 +39,7 @@ const { pieChartsInfo } = toRefs(props);
     position: relative;
     overflow: hidden;
     margin: 0 8px 16px;
-    height: 300px;
+    height: 270px;
     background-color: #3b7cd6;
   }
 }

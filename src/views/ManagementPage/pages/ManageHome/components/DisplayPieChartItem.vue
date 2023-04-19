@@ -57,13 +57,15 @@ const getOption = () => {
       trigger: "item"
     },
     legend: {
-      top: "5%",
-      left: "right"
+      top: 0,
+      orient: "vertical",
+      right: 0
     },
     series: [
       {
         name: pieChartItem.value.title,
         type: "pie",
+        right: "15%",
         radius: ["30%", "60%"],
         avoidLabelOverlap: false,
         itemStyle: {
