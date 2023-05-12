@@ -13,10 +13,21 @@ interface SearchFilterItemListItem {
   title: string;
 }
 
+interface SearchActiveDateItem {
+  activeKey: string;
+  optionalDate: string[];
+}
+
+interface ActiveFilterItem {
+  // 表示任意为 string 的 key，值为 string 或 string数组
+  [propName: string]: string | string[] | SearchActiveDateItem;
+}
+
 // 检索条件的声明
 interface SearchFilter {
   title: string;
   showMoreFilter?: boolean;
   searchInput: string | string[];
   searchFilterItem: SearchFilterItem[];
+  activeFilterItem?: ActiveFilterItem;
 }

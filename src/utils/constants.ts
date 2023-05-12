@@ -4,7 +4,7 @@
 
 export const TypeList: SearchFilterItem = {
   name: "类型",
-  key: "type",
+  key: "typeList",
   multiple: true,
   list: [
     { key: "all", title: "全部" },
@@ -18,7 +18,7 @@ export const TypeList: SearchFilterItem = {
 
 export const DateList: SearchFilterItem = {
   name: "时间",
-  key: "date",
+  key: "dateList",
   multiple: false,
   list: [
     { key: "all", title: "全部" },
@@ -31,7 +31,7 @@ export const DateList: SearchFilterItem = {
 
 export const SourceList: SearchFilterItem = {
   name: "资源",
-  key: "source",
+  key: "sourceList",
   multiple: false,
   list: [
     { key: "all", title: "全部" },
@@ -42,7 +42,7 @@ export const SourceList: SearchFilterItem = {
 
 export const StatusList: SearchFilterItem = {
   name: "状态",
-  key: "status",
+  key: "statusList",
   multiple: true,
   list: [
     { key: "all", title: "全部" },
@@ -54,7 +54,7 @@ export const StatusList: SearchFilterItem = {
 
 export const ViewList: SearchFilterItem = {
   name: "查看",
-  key: "view",
+  key: "viewList",
   multiple: false,
   list: [
     { key: "all", title: "全部" },
@@ -67,7 +67,7 @@ export const ViewList: SearchFilterItem = {
 
 export const DisplayList: SearchFilterItem = {
   name: "展示",
-  key: "display",
+  key: "displayList",
   multiple: false,
   list: [
     { key: "list", title: "列表" },

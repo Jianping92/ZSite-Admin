@@ -50,7 +50,18 @@ const searchListInfo = reactive<SearchFilter>({
     StatusList,
     ViewList,
     DisplayList
-  ]
+  ],
+  activeFilterItem: {
+    typeList: ["all"],
+    dateList: {
+      activeKey: "",
+      optionalDate: []
+    },
+    sourceList: ["all"],
+    statusList: ["all"],
+    viewList: ["all"],
+    displayList: ["list"]
+  }
 });
 </script>
 
