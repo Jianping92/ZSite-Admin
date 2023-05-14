@@ -54,7 +54,7 @@ const searchListInfo = reactive<SearchFilter>({
   activeFilterItem: {
     typeList: ["all"],
     dateList: {
-      activeKey: "",
+      activeKey: "all",
       optionalDate: []
     },
     sourceList: ["all"],

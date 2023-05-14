@@ -26,6 +26,7 @@
       <div class="search-item-list">
         <div
           class="search-list-items"
+          :class="{ 'item-active': itemIsActive(filter, item) }"
           v-for="filter in item.list"
           :key="filter.key"
           @click="selectedFilter(filter, item)"
@@ -111,6 +112,10 @@ const selectedFilter = (
             activeFilterItem = activeFilterItem.filter(
               (item) => item !== selected.key
             );
+            // 如果数据去重后为空则需要填充 all
+            if (activeFilterItem.length < 1) {
+              activeFilterItem.push("all");
+            }
             (searchListInfo.value.activeFilterItem as ActiveFilterItem)[
               filterKey
             ] = activeFilterItem;
@@ -146,6 +151,29 @@ const selectedFilter = (
       };
     }
   }
+};
+
+const itemIsActive = (
+  selected: SearchFilterItemListItem,
+  item: SearchFilterItem
+) => {
+  const { key: filterKey } = item;
+  if (
+    filterKey in (searchListInfo.value.activeFilterItem as ActiveFilterItem)
+  ) {
+    let activeFilterItem = (
+      searchListInfo.value.activeFilterItem as ActiveFilterItem
+    )[filterKey];
+    if (Array.isArray(activeFilterItem)) {
+      return activeFilterItem.includes(selected.key);
+    } else if ("activeKey" in (activeFilterItem as SearchActiveDateItem)) {
+      // 如果activeKey存在则表示是时间筛选条件
+      return (
+        (activeFilterItem as SearchActiveDateItem).activeKey === selected.key
+      );
+    }
+  }
+  return false;
 };
 </script>
 
@@ -224,6 +252,10 @@ const selectedFilter = (
         cursor: pointer;
 
         &:hover {
+          color: #409eff;
+        }
+
+        &.item-active {
           color: #409eff;
         }
       }
