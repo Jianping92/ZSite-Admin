@@ -4,7 +4,10 @@
       class="manage-list-search"
       :class="{ more: searchListInfo.showMoreFilter }"
     >
-      <search-list :searchListInfo="searchListInfo as SearchFilter" />
+      <search-list
+        :searchListInfo="searchListInfo as SearchFilter"
+        @getDataByFilter="getDataBySearch"
+      />
     </div>
     <div class="manage-list-content">
       <general-pagination
@@ -13,7 +16,12 @@
       />
     </div>
   </div>
-  <search-drawer :openDrawer="showDrawer as boolean" />
+  <search-drawer
+    :openDrawer="showDrawer as boolean"
+    :searchListInfo="searchListInfo as SearchFilter"
+    @drawerSubmit="drawerSubmit"
+  />
+  <search-drawer-btn @showDrawer="openDrawer" />
 </template>
 
 <script setup lang="ts">
@@ -27,6 +35,7 @@ import {
   TypeList,
   ViewList
 } from "@/utils/constants";
+import SearchDrawerBtn from "@/views/ManagementPage/pages/ManageList/components/SearchDrawerBtn.vue";
 
 const pagination = ref<HTMLElement | null>(null);
 let paginationInfo = ref<PaginationItem>({
@@ -37,7 +46,7 @@ let paginationInfo = ref<PaginationItem>({
   startNum: 0
 });
 
-const showDrawer = ref<boolean>(false);
+const showDrawer = ref<boolean>(true);
 
 const searchListInfo = reactive<SearchFilter>({
   title: "管理列表",
@@ -63,6 +72,18 @@ const searchListInfo = reactive<SearchFilter>({
     displayList: ["list"]
   }
 });
+
+const openDrawer = () => {
+  showDrawer.value = true;
+};
+const drawerSubmit = () => {
+  showDrawer.value = false;
+  getDataBySearch();
+};
+
+const getDataBySearch = async () => {
+  console.log("getDataBySearch");
+};
 </script>
 
 <style lang="scss" scoped>

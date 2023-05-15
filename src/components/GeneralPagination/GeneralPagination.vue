@@ -67,5 +67,6 @@ defineExpose({ handleInit });
   padding: 0 8px;
   width: 100%;
   box-sizing: border-box;
+  user-select: none;
 }
 </style>

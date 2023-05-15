@@ -224,7 +224,7 @@ const itemIsActive = (
     .search-item-title {
       position: relative;
       overflow: hidden;
-      width: 80px;
+      width: 50px;
       height: 30px;
       font-size: 14px;
       text-align: left;

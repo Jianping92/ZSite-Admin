@@ -27,6 +27,7 @@ declare module '@vue/runtime-core' {
     GeneralPagination: typeof import('./../src/components/GeneralPagination/GeneralPagination.vue')['default']
     IEpArrowDown: typeof import('~icons/ep/arrow-down')['default']
     IEpCpu: typeof import('~icons/ep/cpu')['default']
+    IEpSetting: typeof import('~icons/ep/setting')['default']
     IEpSwitchButton: typeof import('~icons/ep/switch-button')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
