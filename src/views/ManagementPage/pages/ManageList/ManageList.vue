@@ -10,6 +10,24 @@
       />
     </div>
     <div class="manage-list-content">
+      <div class="manage-list-main">
+        <el-scrollbar>
+          <div
+            class="manage-main-list"
+            v-if="searchListInfo.activeFilterItem.displayList[0] === 'list'"
+          >
+            <manage-list-item v-for="index in 10" :key="index" />
+          </div>
+          <div
+            class="manage-main-card"
+            v-else-if="
+              searchListInfo.activeFilterItem.displayList[0] === 'card'
+            "
+          >
+            <manage-card-item v-for="index in 20" :key="index" />
+          </div>
+        </el-scrollbar>
+      </div>
       <general-pagination
         ref="pagination"
         :pagination-info="paginationInfo as PaginationItem"
@@ -36,6 +54,8 @@ import {
   ViewList
 } from "@/utils/constants";
 import SearchDrawerBtn from "@/views/ManagementPage/pages/ManageList/components/SearchDrawerBtn.vue";
+import ManageListItem from "@/views/ManagementPage/pages/ManageList/components/ManageListItem.vue";
+import ManageCardItem from "@/views/ManagementPage/pages/ManageList/components/ManageCardItem.vue";
 
 const pagination = ref<HTMLElement | null>(null);
 let paginationInfo = ref<PaginationItem>({
@@ -46,7 +66,7 @@ let paginationInfo = ref<PaginationItem>({
   startNum: 0
 });
 
-const showDrawer = ref<boolean>(true);
+const showDrawer = ref<boolean>(false);
 
 const searchListInfo = reactive<SearchFilter>({
   title: "管理列表",
@@ -128,6 +148,33 @@ const getDataBySearch = async () => {
     height: calc(100% - 108px);
     background: #fff;
     border-radius: 4px;
+
+    .manage-list-main {
+      position: relative;
+      overflow-y: hidden;
+      width: 100%;
+      height: calc(100% - 50px);
+
+      .manage-main-list {
+        position: relative;
+        padding: 8px;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+      }
+
+      .manage-main-card {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        padding: 8px;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        align-content: flex-start;
+        flex-wrap: wrap;
+      }
+    }
   }
 }
 </style>
